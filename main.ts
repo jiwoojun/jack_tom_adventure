@@ -11,6 +11,12 @@ sprites.onOverlap(SpriteKind.player2, SpriteKind.Enemy, function (sprite, otherS
 statusbars.onZero(StatusBarKind.health2, function (status) {
     game_over_jack = 0
 })
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+	
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.item, function (sprite, otherSprite) {
 	
 })
@@ -99,6 +105,9 @@ satusbar2.value = 100
 satusbar2.attachToSprite(Tom)
 game_over_tom = 2
 game_over_jack = 2
+let statusbar3 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
+statusbar3.value = 100
+statusbar3.attachToSprite(gypsy1)
 game.onUpdate(function () {
     if (game_over_jack + game_over_tom == 0) {
         game.over(false)
